@@ -19,30 +19,21 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-# Screen Density
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+# It's 64-bit product
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
-# Boot Animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
+# Inherit some common CM stuff
+$(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-# Time Zone data
-PRODUCT_COPY_FILES += \
-    bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+# Release Name
+PRODUCT_RELEASE_NAME := venus
 
-# Some Extra Packages
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    charger \
-    chargerled
+# Inherit Device Configuration
+$(call inherit-product, device/huawei/venus/device_venus.mk)
 
-# Kernel
-PRODUCT_COPY_FILES += \
-    device/huawei/venus/recovery/kernel:kernel
-
-PRODUCT_NAME := full_venus
+# Device Identifiers
+PRODUCT_NAME := cm_venus
 PRODUCT_DEVICE := venus
-PRODUCT_BRAND := P9 Lite
+PRODUCT_BRAND := P9-Lite
 PRODUCT_MODEL := venus
 PRODUCT_MANUFACTURER := Huawei

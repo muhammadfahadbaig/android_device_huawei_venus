@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/full_venus.mk
+	$(LOCAL_DIR)/cm.mk
