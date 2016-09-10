@@ -25,9 +25,11 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/recovery/root/fstab.hi6250:root/fstab.hi6250 \
 	$(LOCAL_PATH)/recovery/root/init.recovery.hi6250.rc:root/init.recovery.hi6250.rc \
 	$(LOCAL_PATH)/recovery/root/ueventd.hi6250.rc:root/ueventd.hi6250.rc \
-	$(LOCAL_PATH)/recovery/root/verity_key:root/verity_key \
+	$(LOCAL_PATH)/recovery/root/init.chip.usb.rc:root/init.chip.usb.rc \
 	$(LOCAL_PATH)/recovery/root/sbin/teecd:root/sbin/teecd \
-	$(LOCAL_PATH)/recovery/root/sbin/volisnotd:root/sbin/volisnotd
+	$(LOCAL_PATH)/recovery/root/sbin/volisnotd:root/sbin/volisnotd \
+	$(LOCAL_PATH)/recovery/root/sbin/hw_crit_service_sys:root/sbin/hw_crit_service_sys \
+	$(LOCAL_PATH)/recovery/root/sbin/mkfs.f2fs:root/sbin/mkfs.f2fs
 	
 # Decryption Support (thanks to paulobrien)
 PRODUCT_COPY_FILES += \
